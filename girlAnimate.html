@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SVG.js</title>
+  <script src="svg.js"></script>
+</head>
+<body>
+  <div id="drawing"></div>
+  <script>
+    var draw = SVG('drawing').size(270, 400)
+/*var path = draw.path('M0 0 A50 50 0 0 1 50 50 A50 50 0 0 0 100 100 H 200 V 120')
+console.log(path.array())
+path.fill('none').move(20, 20).stroke({ width: 1, color: '#ccc' })
+
+path.marker('start', 20, 20, function(add) {
+   var rect = add.rect(20,20).addClass('pn')
+   console.log(rect.data('classes','okokkook'))
+   console.log(rect.data('classes'))
+})
+path.marker('mid', 10, 10, function(add) {
+  add.circle(5, 10).fill('#ccc')
+})
+path.marker('end', 10, 10, function(add) {
+  add.circle(6).center(5,5)
+
+  this.fill('#0f9')
+})*/
+/*draw.path('M10 315 L 110 215 A 30 50 0 1 1 162.55 162.45')
+draw.path('M10 315 L 110 215 A 30 50 1 0 1 162.55 162.45')
+draw.path('M10 315 L 110 215 A 30 50 1 1 1 162.55 162.45')
+draw.path('M10 315 L 110 215 A 30 50 0 0 1 162.55 162.45')*/
+/*var r1 = '60'
+var r2 = '45'
+draw.path('M 80 80 A '+r1+' '+r2+' 1 1 0 125 125').fill('none').stroke({width:1,color:'red'})
+draw.path('M 80 80 A '+r1+' '+r2+' 1 1 1 125 125').fill('none').stroke({width:1,color:'blue'})
+draw.path('M 80 80 A '+r1+' '+r2+' 0 0 0 125 125').fill('none').stroke({width:1,color:'green'})
+draw.path('M 80 80 A '+r1+' '+r2+' 1 0 1 125 125').fill('none').stroke({width:1,color:'yellow'})
+draw.line(80,80,200,80).fill('none').stroke({width:1,color:'blue'})
+draw.line(125,125,5,125).fill('none').stroke({width:1,color:'red'})
+draw.circle(10).center(80,80).opacity(0.5)
+draw.circle(10).center(125,125).opacity(0.5)*/
+//draw.path('M 0 400 Q  100 0, 200 400')
+// draw.path('M 10 300 C 20 80, 240 80, 250 300 L 200 310 L 185 210 L 175 225 L 150 225 L 145 220 L 140 235 Q 120 240 100 235 T 80 240 L 60 310 z').fill('yellow').stroke("none")
+
+demq1 = draw.path('M 60 320 Q 85 335 115 340 Q 80 320 85 250 Q 145 250 163 225 L 150 225 L 145 220 L 140 235 Q 120 240 100 235 Q 90 235 80 240 z').fill('#fff').stroke({dashoffset:700,dasharray:700,color:"#F6B45E",width:1})
+demq2 = draw.path('M 115 340 Q 80 320 85 250 Q 145 250 163 225 L 175 225 L 185 210 L 210 320 Q 185 335 165 340 Q 140 355 115 340').fill('#fff').stroke({dashoffset:700,dasharray:700,color:"#F6B45E",width:1})
+maz1 = draw.path('M 10 320 Q 20 140 130 140 Q 105 175 100 235 Q 90 235 80 240 L 60 340 z').fill('#fff').stroke({dashoffset:700,dasharray:700,color:"#F6B45E",width:1})
+maz2 = draw.path('M 130 140 Q 250 140, 250 320 L 200 340 L 185 210 L 175 225 L 150 225 L 145 220 L 140 235 Q 120 240 100 235 Q 105 175 130 140 ').fill('#fff').stroke({dashoffset:700,dasharray:700,color:"#F6B45E",width:1})
+
+ashk1 = draw.rect(10,15).center(100,270).radius(5).fill('#fff').stroke({dashoffset:700,dasharray:700,color:"#F6B45E",width:1})
+
+ashk2 = draw.rect(10,15).center(165,270).radius(5).fill('#fff').stroke({dashoffset:700,dasharray:700,color:"#F6B45E",width:1})
+
+beran = draw.path('M 110 310 Q 135 320 160 310').stroke({width:1,color:'#E4B07B',linecap:'round',dashoffset:700,dasharray:700}).fill('none')
+  	beran.animate(5000).stroke({dashoffset:0})
+  	maz1.animate(5000).stroke({dashoffset:0})
+  	maz2.animate(5000).stroke({dashoffset:0})
+  	demq1.animate(5000).stroke({dashoffset:0})
+  	demq2.animate(5000).stroke({dashoffset:0})
+  	ashk1.animate(5000).stroke({dashoffset:0})
+  	ashk2.animate(5000).stroke({dashoffset:0})
+	setTimeout(function(){
+	  	maz1.animate(500).stroke("#F6B45E").fill("#F6B45E")
+	  	maz2.animate(500).stroke("#FFC85C").fill("#FFC85C")
+	  	demq1.animate(500).stroke("#FFD7A3").fill("#FFD7A3")
+	  	demq2.animate(500).stroke("#FFE1B2").fill("#FFE1B2")
+	  	ashk1.animate(500).stroke("#623F33").fill("#623F33")
+	  	ashk2.animate(500).stroke("#623F33").fill("#623F33")
+	  	beran.animate(500).stroke({width:12})
+  	})
+  	    console.log(draw)
+
+
+
+</script>
+  <style type="text/css">
+  	svg{
+  		transition: 1s all;
+  	}
+  	#SvgjsPath1014,#SvgjsRect1012,#SvgjsRect1013{
+  		transition: 1s all;
+  	}
+  	svg:hover #SvgjsPath1014{
+  		d: path('M 110 310 Q 135 290 160 310');
+  		stroke:#CD9D65;
+  		stroke-width:5px;
+  	}
+  	svg:hover #SvgjsRect1012,svg:hover #SvgjsRect1013{
+  		width:10px;
+  		height:10px;
+  	}
+  </style>
+</body>
+</html>
